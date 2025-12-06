@@ -131,7 +131,7 @@
       display:flex;gap:18px;align-items:center;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
       border:1px solid rgba(255,255,255,0.03); transition: transform .18s;
     }
-    .product:hover{transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.35);}
+    .product:hover{transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.35);} 
     .thumb{width:120px;height:84px;border-radius:10px;overflow:hidden;flex:0 0 120px;background:#2f1f16;display:flex;align-items:center;justify-content:center}
     .thumb img{width:100%;height:100%;object-fit:cover;display:block}
     .pinfo h3{font-family:'Playfair Display', serif;color:var(--beige);font-size:20px}
@@ -196,7 +196,8 @@
 
     <header>
       <div class="logo" aria-hidden="true">
-        <img src="logo.png" alt="Logo Sweet Mix">
+        <!-- Ahora usa el logo que subas a images/logo_mark.png -->
+        <img src="images/logo_mark.png" alt="Logo Sweet Mix">
       </div>
       <div class="brand">
         <h1>Sweet Mix</h1>
@@ -250,7 +251,7 @@
 
           <div id="menu" class="products">
             <article class="product fade-up">
-              <div class="thumb"><img src="malteada.jpg" alt="Malteada Sweet Mix"></div>
+              <div class="thumb"><img src="images/malteada1.jpg" alt="Malteada Sweet Mix"></div>
               <div class="pinfo">
                 <h3>Malteada</h3>
                 <p class="muted">Malteadas cremosas hechas con helado artesanal, toppings y combinaciones únicas. Presentación 500 ml.</p>
@@ -259,7 +260,7 @@
             </article>
 
             <article class="product fade-up">
-              <div class="thumb"><img src="brownie.jpg" alt="Brownie Sweet Mix"></div>
+              <div class="thumb"><img src="images/brownie1.jpg" alt="Brownie Sweet Mix"></div>
               <div class="pinfo">
                 <h3>Brownies</h3>
                 <p class="muted">Brownies intensos y húmedos con rico sabor a chocolate. Perfectos para acompañar con malteadas.</p>
@@ -268,7 +269,7 @@
             </article>
 
             <article class="product fade-up">
-              <div class="thumb"><img src="galleta.jpg" alt="Galletas Sweet Mix"></div>
+              <div class="thumb"><img src="images/galleta1.jpg" alt="Galletas Sweet Mix"></div>
               <div class="pinfo">
                 <h3>Galletas</h3>
                 <p class="muted">Galletas de chispas de chocolate, doradas por fuera y suaves por dentro. Ideal para compartir.</p>
@@ -299,9 +300,12 @@
           <section style="margin-top:22px">
             <h3 style="color:var(--beige)">Galería</h3>
             <div class="gallery fade-up" aria-hidden="false">
-              <img src="malteada2.jpg" alt="Malteada detalle">
-              <img src="brownie2.jpg" alt="Brownie detalle">
-              <img src="galleta2.jpg" alt="Galletas detalle">
+              <img src="images/malteada1.jpg" alt="Malteada detalle">
+              <img src="images/malteada2.jpg" alt="Malteada detalle 2">
+              <img src="images/galleta1.jpg" alt="Galletas detalle">
+              <img src="images/galleta2.jpg" alt="Galletas detalle 2">
+              <img src="images/brownie1.jpg" alt="Brownie detalle">
+              <img src="images/brownie2.jpg" alt="Brownie detalle 2">
             </div>
           </section>
         </section>
@@ -361,7 +365,7 @@
   </div>
 
   <a id="whatsappFab" class="whatsapp-fab" href="#" target="_blank" aria-label="Enviar mensaje por WhatsApp" data-whatsapp="528343510234">
-    <img src="whatsapp-icon-white.png" alt="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp">
   </a>
 
   <script>
