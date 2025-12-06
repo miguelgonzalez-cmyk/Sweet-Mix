@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sweet Mix — Malteadas, Brownies y Galletas</title>
+  <meta name="description" content="Sweet Mix - Malteadas, brownies y galletas artesanales. Promoción de preventa: aparta con $10." />
+  <link href="https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+  <style>
+    :root{
+      --brown-dark:#2e1a10;
+      --brown:#3a241c;
+      --beige:#f2d6b1;
+      --gold:#c99b40;
+      --muted: rgba(242,214,177,0.95);
+      --container:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--beige) 0%, #ead5ae 100%);
+      color:var(--brown-dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      max-width:var(--container);
+      margin:28px auto;
+      background:linear-gradient(180deg,var(--brown) 0%, #3c241c 100%);
+      border-radius:18px;
+      box-shadow:0 18px 60px rgba(0,0,0,0.45);
+      overflow:hidden;
+      border:6px solid rgba(201,155,64,0.06);
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:28px 36px;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .logo{
+      width:92px;height:92px;border-radius:50%;background:var(--beige);display:flex;align-items:center;justify-content:center;flex:0 0 92px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.45);
+    }
+    .logo img{width:72%; height:72%; object-fit:contain; display:block;}
+
+    .brand{
+      color:var(--beige);
+    }
+    .brand h1{font-family:'Playfair Display', serif;font-size:28px;letter-spacing:1px;margin-bottom:4px}
+    .brand p{color:var(--muted); font-size:14px}
+    .nav-cta{margin-left:auto; display:flex; gap:12px; align-items:center}
+
+    .btn{
+      background:var(--gold);
+      color:var(--brown-dark);
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 12px 30px rgba(201,155,64,0.12);
+    }
+    .btn-outline{
+      background:transparent;
+      color:var(--beige);
+      padding:8px 12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.05);
+      text-decoration:none;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+      align-items:center;
+      padding:36px;
+    }
+    .hero-left{
+      color:var(--beige);
+      padding-right:8px;
+    }
+    .kicker{color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:8px}
+    .hero h2{
+      font-family:'Playfair Display', serif;
+      font-size:44px;
+      margin-bottom:12px;
+      line-height:1.02;
+    }
+    .hero p.lead{color:var(--muted); font-size:18px; margin-bottom:16px}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .price-pill{
+      background:rgba(242,214,177,0.08);
+      padding:10px 14px;border-radius:12px;color:var(--muted);
+      display:inline-flex;gap:10px;align-items:center;font-weight:600;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* right card hero */
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      color:var(--beige);
+    }
+    .hero-card h4{font-size:20px;margin-bottom:8px}
+    .hero-card ul{list-style:none;padding-left:0;color:var(--muted)}
+    .hero-card li{margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+    .hero-card .small{font-size:13px;color:rgba(242,214,177,0.8)}
+
+    /* main grid */
+    main{padding:28px 36px 48px 36px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* products list */
+    .products{
+      display:flex;flex-direction:column;gap:18px;
+    }
+    .product{
+      display:flex;gap:18px;align-items:center;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border:1px solid rgba(255,255,255,0.03); transition: transform .18s;
+    }
+    .product:hover{transform: translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.35);}
+    .thumb{width:120px;height:84px;border-radius:10px;overflow:hidden;flex:0 0 120px;background:#2f1f16;display:flex;align-items:center;justify-content:center}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .pinfo h3{font-family:'Playfair Display', serif;color:var(--beige);font-size:20px}
+    .pinfo p{color:var(--muted);font-size:14px}
+    .pprice{margin-left:auto;color:var(--gold);font-weight:800;font-size:20px}
+
+    /* aside */
+    aside .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .promo{background:linear-gradient(90deg, rgba(201,155,64,0.12), rgba(201,155,64,0.06)); padding:12px;border-radius:10px;color:var(--beige);font-weight:700;margin-bottom:12px}
+    .muted{color:var(--muted)}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .gallery img{width:100%;height:96px;object-fit:cover;border-radius:8px}
+
+    /* form */
+    form.contact{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--beige)}
+    button.primary{background:var(--gold);color:var(--brown-dark);border:none;padding:12px;border-radius:10px;font-weight:700;cursor:pointer}
+    button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--beige);padding:10px;border-radius:8px}
+
+    footer{
+      padding:20px 36px;background:rgba(0,0,0,0.06);color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03)
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-fab{
+      position: fixed;
+      right:18px;
+      bottom:18px;
+      width:64px;height:64px;border-radius:50%;
+      background:linear-gradient(180deg,var(--gold), #b58230);
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+      z-index:999;
+    }
+    .whatsapp-fab img{width:34px;height:34px;display:block}
+
+    /* small screens */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:560px){
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .thumb{width:88px;height:60px}
+      .logo{width:72px;height:72px}
+      header{padding:18px}
+      main{padding:18px}
+      .hero h2{font-size:30px}
+    }
+
+    /* subtle animations */
+    .fade-up{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+    .fade-up.in{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+
+  <div class="wrap" role="main" aria-label="Sweet Mix Landing Page">
+
+    <header>
+      <div class="logo" aria-hidden="true">
+        <img src="logo.png" alt="Logo Sweet Mix">
+      </div>
+      <div class="brand">
+        <h1>Sweet Mix</h1>
+        <p class="muted">Malteadas • Brownies • Galletas  — Postres artesanales</p>
+      </div>
+
+      <nav class="nav-cta" aria-label="Acciones">
+        <a class="btn" href="#contacto">Ordena ahora</a>
+        <a class="btn-outline" href="#menu">Ver menú</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left fade-up" id="hero-content">
+        <div class="kicker">Promoción | Preventa</div>
+        <h2 id="hero-title">Endulza tu día con sabor</h2>
+        <p class="lead">Malteadas cremosas, brownies intensos y galletas recién horneadas. Hechos con ingredientes de alta calidad y amor por lo artesanal.</p>
+
+        <div class="cta-row" style="margin-top:18px">
+          <a class="btn" href="#contacto">Aparta con $10</a>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-left:14px">
+            <div class="price-pill">Malteada 500 ml — <strong style="color:var(--gold)">$50</strong></div>
+            <div class="price-pill">Brownie — <strong style="color:var(--gold)">$35</strong></div>
+            <div class="price-pill">Galleta — <strong style="color:var(--gold)">$25</strong></div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:16px">Horario: Lun-Dom 10:00 - 21:00 · Tel: +52 834 351 0234</p>
+      </div>
+
+      <aside class="hero-card fade-up" style="align-self:start">
+        <h4>¿Por qué elegir Sweet Mix?</h4>
+        <ul>
+          <li><span class="muted">Productos artesanales</span></li>
+          <li><span class="muted">Ingredientes de calidad</span></li>
+          <li><span class="muted">Sabor casero garantizado</span></li>
+        </ul>
+
+        <div style="margin-top:12px">
+          <div class="muted small">Promoción especial</div>
+          <div style="margin-top:8px;font-weight:700;color:var(--beige)">Llévate 2 malteadas y obtén 10% de descuento</div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <div class="grid">
+
+        <section>
+          <h2 style="color:var(--gold);margin-bottom:12px">Menú destacado</h2>
+
+          <div id="menu" class="products">
+            <article class="product fade-up">
+              <div class="thumb"><img src="malteada.jpg" alt="Malteada Sweet Mix"></div>
+              <div class="pinfo">
+                <h3>Malteada</h3>
+                <p class="muted">Malteadas cremosas hechas con helado artesanal, toppings y combinaciones únicas. Presentación 500 ml.</p>
+              </div>
+              <div class="pprice">$50</div>
+            </article>
+
+            <article class="product fade-up">
+              <div class="thumb"><img src="brownie.jpg" alt="Brownie Sweet Mix"></div>
+              <div class="pinfo">
+                <h3>Brownies</h3>
+                <p class="muted">Brownies intensos y húmedos con rico sabor a chocolate. Perfectos para acompañar con malteadas.</p>
+              </div>
+              <div class="pprice">$35</div>
+            </article>
+
+            <article class="product fade-up">
+              <div class="thumb"><img src="galleta.jpg" alt="Galletas Sweet Mix"></div>
+              <div class="pinfo">
+                <h3>Galletas</h3>
+                <p class="muted">Galletas de chispas de chocolate, doradas por fuera y suaves por dentro. Ideal para compartir.</p>
+              </div>
+              <div class="pprice">$25</div>
+            </article>
+          </div>
+
+          <section style="margin-top:22px" class="fade-up">
+            <h2 style="color:var(--gold)">¿Quiénes somos?</h2>
+            <p class="muted">Sweet Mix es un emprendimiento dedicado a crear postres artesanales con ingredientes frescos y de alta calidad. Nuestro objetivo es ofrecer productos deliciosos, accesibles y hechos con pasión. Cada compra impulsa nuestro proyecto y nos ayuda a crecer como emprendedores.</p>
+
+            <div style="margin-top:18px">
+              <h3 style="color:var(--beige)">Nuestros productos</h3>
+              <ul style="color:var(--muted);margin-top:8px;line-height:1.6">
+                <li><strong>Galletas:</strong> Suaves, con chispas de chocolate y sabor casero.</li>
+                <li><strong>Brownies:</strong> Húmedos, chocolatosos y hechos al momento.</li>
+                <li><strong>Malteadas:</strong> Cremosas, espesas y con auténtico sabor a chocolate.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top:18px">
+              <h3 style="color:var(--gold)">Apóyanos en la feria de emprendimiento</h3>
+              <p class="muted">¡Haz tu pedido hoy y aparta tus productos para la feria! Aparta con solo $10 pesos. Cada compra impulsa nuestro proyecto.</p>
+            </div>
+          </section>
+
+          <section style="margin-top:22px">
+            <h3 style="color:var(--beige)">Galería</h3>
+            <div class="gallery fade-up" aria-hidden="false">
+              <img src="malteada2.jpg" alt="Malteada detalle">
+              <img src="brownie2.jpg" alt="Brownie detalle">
+              <img src="galleta2.jpg" alt="Galletas detalle">
+            </div>
+          </section>
+        </section>
+
+        <aside>
+          <div class="card">
+            <div class="promo">Promoción de Preventa</div>
+            <p class="muted">Aparta tus productos con solo <strong>$10</strong>. Oferta válida para la feria y primeras 50 órdenes cada día.</p>
+
+            <div style="margin-top:12px">
+              <a class="btn" href="#contacto" onclick="openWhatsAppPreventa()">Apartar ahora</a>
+              <a class="btn-outline" style="margin-left:8px" href="#contacto">Más info</a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h4 style="color:var(--gold)">Contacto</h4>
+            <p class="muted">¿Tienes un pedido o una duda? Envía tu pedido por WhatsApp y te respondemos al momento.</p>
+
+            <form class="contact" id="contactForm" onsubmit="handleContact(event)" aria-label="Formulario de contacto">
+              <input id="nombre" type="text" placeholder="Nombre" required>
+              <input id="correo" type="email" placeholder="Correo (opcional)">
+              <input id="telefono" type="text" placeholder="Teléfono (opcional)">
+              <select id="producto">
+                <option value="">Selecciona producto (opcional)</option>
+                <option value="Malteada">Malteada - $50</option>
+                <option value="Brownie">Brownie - $35</option>
+                <option value="Galleta">Galleta - $25</option>
+              </select>
+              <textarea id="mensaje" rows="3" placeholder="Mensaje / Pedido" required></textarea>
+              <div style="display:flex;gap:8px">
+                <button type="submit" class="primary">Enviar por WhatsApp</button>
+                <button type="button" class="secondary" onclick="clearForm()">Limpiar</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h4 style="color:var(--gold)">Síguenos en Instagram</h4>
+            <p class="muted">@sweet_mix2025</p>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <a class="btn-outline" href="https://www.instagram.com/sweet_mix2025" target="_blank">Instagram</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div style="max-width:var(--container);margin:auto;padding:8px 16px;color:var(--muted)">
+        <div><strong>Sweet Mix</strong> · Postres artesanales</div>
+        <div style="margin-top:6px">Correo: miguelgonzalez@surval.edu.mx · Tel: +52 834 351 0234</div>
+        <div style="margin-top:8px;font-size:13px">© Sweet Mix · Todos los derechos reservados</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <a id="whatsappFab" class="whatsapp-fab" href="#" target="_blank" aria-label="Enviar mensaje por WhatsApp" data-whatsapp="528343510234">
+    <img src="whatsapp-icon-white.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    // Small helper to animate elements on load / scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elems = document.querySelectorAll('.fade-up');
+      elems.forEach((el, i) => setTimeout(()=> el.classList.add('in'), 80 + i*80));
+    });
+
+    // Clear form
+    function clearForm(){
+      document.getElementById('contactForm').reset();
+    }
+
+    // Build WhatsApp URL from form and open
+    function handleContact(e){
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const producto = document.getElementById('producto').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if(!nombre || !mensaje){ alert('Por favor completa nombre y mensaje.'); return; }
+
+      // Número de WhatsApp actualizado
+      const whatsappNumber = document.getElementById('whatsappFab').dataset.whatsapp || '528343510234';
+      const parts = [
+        'Hola! Soy *' + nombre + '*.',
+        producto ? ('Quisiera: ' + producto) : '',
+        'Mensaje: ' + mensaje,
+        telefono ? ('Tel: ' + telefono) : '',
+        correo ? ('Email: ' + correo) : '',
+        '',
+        'Enviado desde la web Sweet Mix'
+      ].filter(Boolean);
+
+      const text = encodeURIComponent(parts.join('\n'));
+      const url = 'https://wa.me/' + whatsappNumber + '?text=' + text;
+      window.open(url, '_blank');
+    }
+
+    // Pre-venta quick link - Número Actualizado
+    function openWhatsAppPreventa(){
+      const whatsappNumber = document.getElementById('whatsappFab').dataset.whatsapp || '528343510234';
+      const text = encodeURIComponent('Hola! Quiero apartar productos con la promoción de preventa. Aparto con $10.');
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + text, '_blank');
+    }
+
+    // Floating FAB link set up - Número Actualizado
+    (function initFab(){
+      const fab = document.getElementById('whatsappFab');
+      const phone = fab.dataset.whatsapp || '528343510234';
+      const defaultMsg = encodeURIComponent('Hola! Me interesa Sweet Mix. ¿Me pueden ayudar?');
+      fab.href = 'https://wa.me/' + phone + '?text=' + defaultMsg;
+    })();
+  </script>
+</body>
+</html>
